@@ -1,0 +1,60 @@
+/*Main panel*/
+
+.panel{
+    margin: 0px;
+    background-image: url("../../images/panel_background.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    border-radius: 0;
+}
+
+.panel-text{
+    margin-top : 10%;
+    font-family: 'Unkempt', cursive;
+    text-align: center;
+}
+
+.panel-text > h1{
+    font-size: 60px;
+    color : #ffe699;
+
+}
+
+.panel-text > p{
+    margin-top: 3%;
+    font-weight: bold;
+    color : white;
+
+}
+
+.panel-button{
+    margin : 5%;
+    background-color: #ffe699;
+    border-color:  #ffe699;
+    color : #00284d;
+    font-weight: bold;
+}
+
+.panel-button:hover{
+
+    background-color: #ffecb3;
+    border-color:  #ffecb3;
+    color : #003566;
+}
+
+@media (min-width: 300px) and (max-width:768px){
+    .panel-text{
+        margin-top : 20%;
+    }
+
+    .panel-text > p{
+        margin-top: 3%;
+    }
+
+    .panel-button{
+        margin : 10%;
+    }
+
+}
