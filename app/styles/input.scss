@@ -1,0 +1,18 @@
+$primary-font-family: 'Unkempt', cursive; 
+
+$primary-background-color: #00284d;
+$primary-text-color: #ffe699;
+$primary-hover-color: #003566;
+
+
+nav{
+    @extend nav; 
+    background-color: white;
+}
+
+nav .brand-logo{
+    @extend .brand-logo;
+    color: #00284d;
+    font-family: 
+}
+

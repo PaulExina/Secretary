@@ -1,0 +1,18 @@
+
+<div ng-controller="FunctionalitiesCtrl"> 
+
+  <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+      <img ng-src="images/carousel_background.png" style="margin:auto">
+      <div class="carousel-caption">
+          
+          <span class="glyphicon glyphicon {{slide.span}} functionality-icon"></span>
+        
+          <h3>{{slide.name}}</h3>
+          <p>{{slide.description}}</p>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>

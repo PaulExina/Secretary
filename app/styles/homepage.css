@@ -20,7 +20,7 @@
 }
 
 .secretary-button-inverse{
-    margin-top : 5%;
+    margin : 7px;
     background-color: #ffe699;
     border-color:  #ffe699;
     color : #00284d;
@@ -36,36 +36,24 @@
 }
 
 /* Navigation bar*/
-.navbar{
+nav{
     margin-bottom: 0px;
     padding-right: 15px;
     padding-left: 15px;
     margin:0px;
+    background-color: white;
 }
 
-.container {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.navbar-element, .navbar-brand{
+nav .brand-logo {
     color: #00284d;
     font-family: 'Unkempt', cursive;
 }
 
-.navbar-element:hover {
-    background-color: #003566;
-    border-color: #003566; 
-    color :#ffe699;
-}
-
-.nav > li > a:hover, .nav > li > a:focus{
-    background-color: #00284d;
-    border-color: #00284d;
-    color : #ffe699;
-    font-weight: bold;
+.container , .carousel {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /*Main panel*/
@@ -82,13 +70,12 @@
 }
 
 .panel-text{
-   
     font-family: 'Unkempt', cursive;
     text-align: center;
 }
 
 .panel-text > h1{
-    margin-top : 15%;
+    margin-top: 0px;
     font-size: 60px;
     color : #ffe699;
 

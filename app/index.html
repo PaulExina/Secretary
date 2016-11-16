@@ -1,118 +1,45 @@
-<!doctype html>
-<html>
+<html lang="en" >
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+    <!-- Angular Material style sheet -->
+  
     <link href="https://fonts.googleapis.com/css?family=Caveat:400,700|Cutive+Mono|Love+Ya+Like+A+Sister|Unkempt:400,700" rel="stylesheet">
+    <link href="../bower_components/angular-material/angular-material.css" rel="stylesheet">
+    <link href='../bower_components/materialize/dist/css/materialize.css' rel="stylesheet">
     <link rel="stylesheet" href="styles/homepage.css">
+    
   </head>
-  <body ng-app="secretaryApp">
-    <div ng-controller="homepageController">
-      <header class="bs-docs-nav navbar navbar-static-top"> 
-        <div class="container"> 
-          <div class="navbar-header">
+  <body ng-app="secretaryApp" ng-cloak>
+   
+    
+    <header ng-include="'views/toolbar/toolbar.login.html'"></header>
+    <main ng-include="'views/main/gettingstarted.html'"></main>
+    <div ng-include="'views/content/functionalities.description.html'"></div>
 
-            <button type="button" class="btn secretary-button navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a href="#" class="navbar-brand ">Secretary</a> 
-          </div> 
-
-          <div class="collapse navbar-collapse"> 
-            <ul class="nav navbar-nav navbar-right "> 
-              <li><a class="navbar-element">Log in</a></li> 
-              <li><button class="btn secretary-button">Sign up</button></li> 
-            </ul>
-          </div> 
-        </div> 
-      </header>
-      <main  class="bs-docs-header panel"  role="main">
-        <div class="container panel-text">
-          <h1>Secretary.</h1> 
-          <p>Get to clean up your desk, retrieve documents easily and organize your life by using Secretary ! </p> 
-
-          <button class="btn secretary-button-inverse">Let's get started</button>
-        </div>
-      </main>
-      
-      
-      <div class="container" ng-controller="funcCtrl"> 
-       
-        
-        <div ng-repeat="func in functionalities">
-          <div class="{{func.class}}" id="{{func.id}}">
-            {{func.firstChildTemplate}}
-            {{func.secondChildTemplate}}
-          </div>
-        </div>
-        
-      </div>
-      <script>
-
-        var app = angular.module("secretaryApp",[]);
-        app.controller('funcCtrl', function($scope){
-          $scope.functionalities =  [
-            {
-              id: "storage-panel",
-              class: "row functionality-panel",
-              firstChildTemplate: '<div class="col-xs-4">'+
-              '<span class="glyphicon glyphicon glyphicon-hdd functionality-icon"></span>'+
-              '</div>',
-              secondChildTemplate:'<div class="col-xs-8">'+
-              '<div class="functionality-caption">'+
-              '<h3>Storage</h3>'+
-              '<p>Lorsque vous insérez des fichiers et images dans les éditeurs de contenus dans le manager du site, les fichiers / images sont nécessairement stockés en ligne, pour être accessibles dans les pages de votre site. </p>'+
-              '</div>'+
-              '</div>'
-            }
-            ,
-            {
-              id: "calendar-panel",
-              class: "row functionality-panel",
-              firstChildTemplate:'<div class="col-xs-8">'+
-              '<div class="functionality-caption">'+
-              '<h3>Calendar</h3>'+
-              '<p>Un agenda est un outil permettant d\'associer des actions à des moments, et d\'organiser ainsi son temps. Il est utilisé afin de pouvoir donner à son utilisateur la possibilité de planifier, de noter son emploi du temps, ses rendez-vous, etc</p>'+
-              '</div>'+
-              '</div>',
-              secondChildTemplate:'<div class="col-xs-4">'+
-              '<span class="glyphicon glyphicon-calendar functionality-icon"></span>'+
-              '</div>'
-            }
-            ,
-            {
-              id: "todolist-panel",
-              class : "row functionality-panel",
-              firstChildTemplate: '<div class="col-xs-4">'+
-              '<span class="glyphicon  glyphicon-list-alt functionality-icon"></span>'+
-              '</div>',
-              secondChildTemplate: '<div class="col-xs-8">'+
-              '<div class="functionality-caption">'+
-              '<h3>To-do list</h3>'+
-              '<p>Une todo list ou une liste des choses à faire est un procédé simple et efficace qui permet de se concentrer sur une tâche d\'un projet sans pour autant perdre de vue les autres tâches à accomplir.</p>'+
-              '</div>'+
-              '</div>'
-            }
-          ];
-        })
-
-      </script>
-    </div>
+    <!-- Angular Library -->
+    
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="../bower_components/angular-material/angular-material.js"></script>
+    
+    <!-- Materialize Library -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/controllers/toolbar.controller.js"></script>
   </body>
 </html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved. 
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->
