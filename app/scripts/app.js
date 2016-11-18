@@ -18,3 +18,4 @@ var app = angular.module('secretaryApp', ['ngMaterial',
                                           'ngTouch',
                                           'ngMessages'
                                          ]);
+

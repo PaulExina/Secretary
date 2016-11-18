@@ -1,162 +1,167 @@
+/*-------------Tools--------------*/
+/*
+Fonts : 
+
+font-family: 'Playfair Display', serif;
+font-family: 'Cormorant Garamond', serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Unkempt', cursive;
+
+Colors : 
+
+dark-blue : #00284d;
+dark-blue(hover) :#003566;
+beige : #ffe699;
+beige(hover) : #ffecb3;
+
+*/
+
 /* Elements */
 
 .secretary-button{
+    margin: 7px;
     background-color: #00284d;
     border-color: #00284d;
     color : #ffe699;
-    margin: 7px;
-    font-family: 'Unkempt', cursive;
-    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+   
 }
 
-.secretary-button:hover{
+.secretary-button:hover, .secretary-button:checked{
     background-color: #003566;
     border-color: #003566; 
-    color :#ffe699;
+    color :#ffecb3;
 }
 
-.secretary-button > .icon-bar{
-    background-color : #ffe699;
-}
-
-.secretary-button-inverse{
-    margin : 7px;
+.secretary-button-scnd{
+    margin: 7px;
     background-color: #ffe699;
     border-color:  #ffe699;
-    color : #00284d;
-    font-weight: bold;
-    font-family: 'Unkempt', cursive;
+    color : #00284d; 
+    font-family: 'Josefin Sans', sans-serif;
 }
 
-.secretary-button-inverse:hover{
+.secretary-button-scnd:hover{
 
     background-color: #ffecb3;
     border-color:  #ffecb3;
     color : #003566;
 }
 
+.secretary-button-thrd{
+    margin: 7px;
+    background-color: white;
+    border-color:  white;
+    color : #00284d;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.secretary-button-thrd:hover{
+
+    background-color: #00284d;
+    border-color:  #00284d;
+    color : white;
+}
+
 /* Navigation bar*/
+
 nav{
-    margin-bottom: 0px;
-    padding-right: 15px;
-    padding-left: 15px;
     margin:0px;
     background-color: white;
+    
 }
 
-nav .brand-logo {
+nav .brand-logo  {
     color: #00284d;
-    font-family: 'Unkempt', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 20px;
 }
 
-.container , .carousel {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+@media only screen and (max-width: 992px){
+    nav .brand-logo {
+        margin-left: 0px;
+    }
+}
+
+.nav-element{
+    color: #00284d;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+}
+
+.nav-element:hover{
+    color: #ffe699; 
+    background-color: #00284d;
+    font-size: 22px;
 }
 
 /*Main panel*/
 
-.panel{
-    margin-bottom: 30px;
+/*Homepage*/
+
+.panel{  
     background-image: url("../images/main_panel_background.jpeg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 100%;
     border-radius: 0;
     border-width: 0;
+    margin-bottom: 5%;
 }
 
 .panel-text{
-    font-family: 'Unkempt', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
 }
 
 .panel-text > h1{
     margin-top: 0px;
-    font-size: 60px;
-    color : #ffe699;
-
-}
-
-.panel-text > p{
-    margin-top: 3%;
-    font-weight: bold;
+    font-size: 70px;
     color : white;
-
 }
 
-@media (min-width: 300px) and (max-width:608px){
+.panel-text > h1 > b{
+    font-size: 90px;
+    font-weight: normal;
+    color: #ffe699;
+}
 
-    .panel-text > h1{
-        margin-top : 40%;   
-    }
+.panel-text > .row > .btn{
+    margin: 20px;
+    margin-top: 40px;
+    height: 65px;
+    width: 200px;
+    line-height: 56px;
     
-    .panel-text > p{
-        margin-top: 3%;
-    }
-
-    .panel-text > .secretary-button-inverse{
-        margin : 10%;
-    }
-
 }
 
-/* Functionalities panel*/
+/*Content*/
 
-.functionality-panel > .col-xs-4{
-    color:  #00284d;
+/* Getting started */
+.getstarted{
+    margin-top: 5%;
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
+    color: #00284d;
 }
 
-.functionality-icon{
-    margin-top: 30%;
-    margin-bottom: 30%;
-    font-size: 100px;
+.getstarted > .steps > p > b {
+    color : #003566;
+    font-size: 26px;
 }
 
-.functionality-caption{
-    margin-left: 0px;
-    margin-right: 20px;
+.getstarted > .steps{
+    font-size: 23px;
+    margin-top: 1%;
 }
 
-.functionality-caption > h3{
-    font-family: 'Unkempt', cursive;
-    font-weight: bold;
-    color :  #00284d;
-    font-size : 30px;
-}
-.functionality-caption > p{
-    margin-top: 10%;
-    font-family: 'Unkempt', cursive;
-    font-weight: bold;
-    color :   #6c8dc2;
-    text-align: justify;
+.getstarted > .caption > p > b{
+    color : #003566;
+    font-size: 30px;
 }
 
-.functionality-panel > .col-xs-8 > .functionality-caption{
-    margin-left: 10%;
-    margin-top: 10%;
-} 
-
-@media (min-width: 300px) and (max-width:639px){
-   
-    .functionality-panel > .col-xs-4{
-        margin-top:5%;
-    }
-    
-    .functionality-icon{
-        margin-top: 30%;
-        margin-bottom: 30%;
-        font-size: 60px;
-    }
-    
-    .functionality-caption > h3{
-        font-size : 25px;
-    }
-    
-    
+.getstarted > .caption{
+    margin: 2%;
+    font-size: 28px;
 }
-

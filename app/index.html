@@ -3,19 +3,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Angular Material style sheet -->
-  
-    <link href="https://fonts.googleapis.com/css?family=Caveat:400,700|Cutive+Mono|Love+Ya+Like+A+Sister|Unkempt:400,700" rel="stylesheet">
-    <link href="../bower_components/angular-material/angular-material.css" rel="stylesheet">
-    <link href='../bower_components/materialize/dist/css/materialize.css' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Josefin+Sans|Playfair+Display|Unkempt" rel="stylesheet">
+    <link href='../bower_components/materialize/dist/css/materialize.min.css' rel="stylesheet">
     <link rel="stylesheet" href="styles/homepage.css">
     
   </head>
   <body ng-app="secretaryApp" ng-cloak>
    
     
-    <header ng-include="'views/toolbar/toolbar.login.html'"></header>
-    <main ng-include="'views/main/gettingstarted.html'"></main>
-    <div ng-include="'views/content/functionalities.description.html'"></div>
+    <header ng-include="'views/toolbar/toolbar.homepage.html'"></header>
+    
+    <div ng-include="'views/main/main.homepage.html'"></div>
+    
+    <div ng-include="'views/content/content.homepage.signup.html'"></div>
+    
+    <div ng-include="'views/content/content.homepage.getstarted.html'"></div>
 
     <!-- Angular Library -->
     
@@ -31,11 +33,12 @@
     <script src="../bower_components/angular-material/angular-material.js"></script>
     
     <!-- Materialize Library -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/materialize/dist/js/materialize.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/materialize/dist/js/materialize.min.js"></script>
+
+
     <script src="scripts/app.js"></script>
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/controllers/toolbar.controller.js"></script>
+
   </body>
 </html>
 
