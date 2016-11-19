@@ -15,7 +15,8 @@ var app = angular.module('secretaryApp', ['ngMaterial',
                                           'ngRoute',
                                           'ngAria',
                                           'ngSanitize',
-                                          'ngTouch',
-                                          'ngMessages'
+                                          'ngMessages',
+                                          'duScroll'
                                          ]);
+
 
