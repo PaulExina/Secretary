@@ -8,17 +8,17 @@
     <link href="styles/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/homepage.css">
     
+    
   </head>
   <body ng-app="secretaryApp" ng-cloak>
    
+    <div ng-view>
+      
+    </div>
     
-    <header ng-include="'views/toolbar/toolbar.homepage.html'"></header>
-
-    <div ng-include="'views/main/main.homepage.html'"></div>
-
-    <div ng-include="'views/content/content.homepage.signup.html'"></div>
     
-    <div ng-include="'views/content/content.homepage.getstarted.html'"></div>
+    
+    
     
     <!-- Angular Library -->
     
@@ -40,6 +40,8 @@
 
 
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
     
   </body>
 </html>

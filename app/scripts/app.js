@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name secretaryApp
- * @description
- * # secretaryApp
- *
- * Main module of the application
-*/
 var app = angular.module('secretaryApp', ['ngMaterial', 
                                           'ngAnimate', 
                                           'ngCookies', 
@@ -19,4 +11,26 @@ var app = angular.module('secretaryApp', ['ngMaterial',
                                           'duScroll'
                                          ]);
 
+app.config(['$routeProvider',
+            function($routeProvider) { 
 
+             // Système de routage
+             $routeProvider
+              .when('/', {
+              templateUrl: 'views/template1.html',
+              controller: 'homeCtrl'
+             })
+              .when('/login', {
+              templateUrl: 'views/login.html',
+              controller: 'loginCtrl'
+             })
+              .when('/password-reset', {
+              templateUrl: 'views/password-reset.html',
+              controller: 'passwordresetCtrl'
+             })
+              .otherwise({
+              redirectTo: '/'
+             })
+             ;
+            }
+           ]);
