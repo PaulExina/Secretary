@@ -1,28 +1,22 @@
 {
-  "name": "secretary",
-  "version": "0.0.0",
+  "name": "Secretary",
+  "description": "Secretary",
+  "main": "server/server.js",
+  "authors": [
+    "PaulExina <paulexina26@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "client/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular": "^1.4.0",
-    "bootstrap": "^3.2.0",
-    "angular-animate": "^1.4.0",
-    "angular-cookies": "^1.4.0",
-    "angular-resource": "^1.4.0",
-    "angular-route": "^1.4.0",
-    "angular-sanitize": "^1.4.0",
-    "angular-touch": "^1.4.0"
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.4.0"
-  },
-  "appPath": "app",
-  "moduleName": "secretaryApp",
-  "overrides": {
-    "bootstrap": {
-      "main": [
-        "less/bootstrap.less",
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js"
-      ]
-    }
+    "ng-pickadate": "^0.3.1",
+    "angucomplete-alt": "^3.0.0"
   }
 }

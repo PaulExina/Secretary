@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "SecretaryDS": {
+    "host": "mongodb://127.0.0.1/",
+    "port": 27017,
+    "url": "mongodb://127.0.0.1:27017/SecretaryDB",
+    "database": "SecretaryDB",
+    "password": "",
+    "name": "SecretaryDS",
+    "user": "SecretaryDB",
+    "connector": "mongodb"
+  }
+}

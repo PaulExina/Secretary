@@ -1,0 +1,18 @@
+  <div ng-controller="dashboardCtrl">
+    <ul class="side-nav fixed">
+        <li class="logo">
+            <a ><img id="logo-container" src="images/logo-secondary.png"/></a>
+        </li>
+
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <div class="sm-spacer"></div>
+        <li><a class="waves-effect white-text" href="#">HOME</a></li>
+        <li><a class="waves-effect white-text" href="/id-record">MY RECORD</a></li>
+    </ul>
+    <div id="feature" ng-include="'views/id-record.html'"></div>  
+  </div>

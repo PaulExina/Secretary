@@ -1,0 +1,328 @@
+<div class="container profile_text" ng-controller="idrecordCtrl">
+    <div id="idPageTitle" class="row id-record_title">
+        <h1>My ID record</h1>
+        <p>In here you can complete your identity informations and store your principal ID papers</p>
+    </div>
+    <div id="id_pictures">
+        <div class="row id-record_title">
+            <h3>Identity pictures</h3>
+        </div>
+        <div class="lg-spacer"></div>
+        <div class="row">
+            <div class="col s5 offset-s1">
+                <h5>Guidelines for a new photo</h5>
+                <div class="col s10 offset-s1">
+                    <p>Min. <b>2 megapixel</b> camera<br/>
+                    Daylight from the front, <b>no flash; no shadows on face</b><br/>
+                    Plain white or light grey background, <b>no texture or shadows</b><br/>
+                    Stand 1 meter (3 feet) from background<br/>
+                    Single person, dark shirt, <b>no uniform</b><br/>
+                    Body & head facing camera, head straight<br/>
+                    Eyes clearly visible, looking at camera<br/>
+                    Mouth closed, <b>no smile or frown</b><br/>
+                    No photo editing<br/>
+                    <b>are accepted photos with glasses, with scarf (for religious purposes only)</b></p>
+                </div>
+            </div>
+            <div class="col s5 offset-s1">
+                <input id="upload" type="file"/>
+                <div class="carousel">
+                    <a class="carousel-item tooltipped" data-position="right" data-delay="50" data-tooltip="Click to add a new ID picture.." id="upload_link" >
+                        <div id="uploadNewPicture">
+                            <i class="material-icons">add_a_photo</i>
+                        </div>
+                    </a>
+                </div>   
+            </div>
+        </div>
+    </div>
+
+<!-- Modal Structure -->
+  <div id="picSettingsModal" class="modal">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
+
+    <div id="id_informations">
+        <div class="row id-record_title">
+            <h3>Personal informations</h3>
+        </div>
+        <div class="lg-spacer"></div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>First name</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="firstname_card"
+                        ng-model="firstname_card"
+                        type="text" 
+                        class="validate"
+                        ng-disabled="!firstname_card_disabled"               
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(0)" ng-disabled="firstname_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(0)" ng-show="firstname_card_disabled"><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(0)" ng-show="firstname_card_disabled"><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Last name</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="lastname_card"
+                        ng-model="lastname_card"
+                        type="text" 
+                        class="validate"
+                        ng-disabled="!lastname_card_disabled"               
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(1)" ng-disabled="lastname_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(1)" ng-show="lastname_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(1)" ng-show="lastname_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Birthdate</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="birthdate_card"
+                        ng-model="birthdate_card"
+                        type="date" 
+                        pick-a-date="birthdate_card"
+                        max-date="endDate"
+                        ng-disabled="!birthdate_card_disabled"               
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(2)" ng-disabled="birthdate_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(2)" ng-show="birthdate_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(2)" ng-show="birthdate_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Birth location</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="birthloc_card"
+                        ng-model="birthloc_card"
+                        type="text" 
+                        class="validate"
+                        ng-disabled="!birthloc_card_disabled"
+                        googleplace               
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(3)" ng-disabled="birthloc_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(3)" ng-show="birthloc_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(3)" ng-show="birthloc_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Nationality</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                   
+                     <angucomplete-alt 
+                        id="nationality_card"
+                        ng-model="nationality_card"
+                        disable-input="!nationality_card_disabled"
+                        pause="100"
+                        selected-object="selected"
+                        local-data="nationalities"
+                        search-fields="nat"
+                        title-field="nat"
+                        minlength="1"
+                        text-searching="Searching for nationality"
+                        input-class="validate"
+                        match-class="highlight"/>
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(4)" ng-disabled="nationality_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(4)" ng-show="nationality_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(4)" ng-show="nationality_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Address</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="address_card"
+                        ng-model="address_card"
+                        type="text" 
+                        class="validate"
+                        ng-disabled="!address_card_disabled"   
+                        googleplace            
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(5)" ng-disabled="address_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(5)" ng-show="address_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating  waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(5)" ng-show="address_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s1">
+                <h5>Phone number</h5>
+            </div>
+            <div class="col s4">
+                <div class="row">
+                    
+                    <input 
+                        id="phone_card"
+                        ng-model="phone_card"
+                        type="text" 
+                        class="validate"
+                        ng-disabled="!phone_card_disabled"               
+                    >
+                </div>
+            </div>
+            <div class="col s3 offset-s1">
+                <button class="btn secretary-button animated fadeIn" ng-click="launchEdit(6)" ng-disabled="phone_card_disabled" >Edit</button>
+                <button class="btn-floating  waves-effect waves-light green darken-1 animated slideInRight" ng-click="confirmEdit(6)" ng-show="phone_card_disabled" ><i class="material-icons">done</i></button>
+                <button class="btn-floating waves-effect waves-light  red darken-2 animated slideInRight" ng-click="cancelEdit(6)" ng-show="phone_card_disabled" ><i class="material-icons">close</i></button>
+            </div>
+        </div>
+        <div class="sm-spacer"></div>
+        <button class="btn btn-large secretary-button-scnd right" ng-click="">UPDATE Info(s)</button>
+        <div class="lg-spacer"></div>
+    </div>
+    <div id="personal_documents">
+        <div class="row id-record_title">
+            <h3>Identification papers*</h3>
+        </div>
+        <div class="md-spacer"></div>
+       <div class="row">
+            <div class="col s2 ">
+                <h5>Passport</h5>
+            </div>
+            <div class="col s7">
+                <div class="file-field input-field">
+                    <div class="btn secretary-button">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s2">
+                    <label class="active" for="passport_exprdate_card">Expiration date</label>
+                    <input 
+                        id="passport_exprdate_card"
+                        ng-model="passport_exprdate_card"
+                        type="date" 
+                        pick-a-date="passport_exprdate_card"
+                        min-date="endDate"               
+                    >
+            </div> 
+            <div class="col s1">
+                 <a class="preview waves-effect waves-blue btn-flat"><i class="material-icons">remove_red_eye</i></a>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <h5>National ID card</h5>
+                <p> or registration permit</p>
+            </div>
+            <div class="col s7">
+                <div class="file-field input-field">
+                    <div class="btn secretary-button">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s2">
+                    <label class="active" for="natid_exprdate_card">Expiration date</label>
+                    <input 
+                        id="natid_exprdate_card"
+                        ng-model="natid_exprdate_card"
+                        type="date" 
+                        pick-a-date="natid_exprdate_card"
+                        min-date="endDate">
+            </div> 
+            <div class="col s1">
+                 <a class="preview waves-effect waves-blue btn-flat"><i class="material-icons">remove_red_eye</i></a>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col s2">
+                <h5>Driver's license</h5>
+            </div>
+            <div class="col s7">
+                <div class="file-field input-field">
+                    <div class="btn secretary-button">
+                        <span>File</span>
+                        <input type="file">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s2">
+                    <label class="active" for="exprdate_card">Expiration date</label>
+                    <input 
+                        id="driver_exprdate_card"
+                        ng-model="driver_exprdate_card"
+                        type="date" 
+                        pick-a-date="driver_exprdate_card"
+                        min-date="endDate"
+              
+                    >
+            </div> 
+            <div class="col s1">
+                 <a class="preview waves-effect waves-blue btn-flat"><i class="material-icons">remove_red_eye</i></a>
+            </div> 
+        </div>
+        <div class="sm-spacer"></div>
+        <p>*The authenticity of the provided documents is at the users' discretion. We will not take any responsibility for the use of false documents.</p>
+        <div class="sm-spacer"></div>
+        <button class="btn btn-large secretary-button-scnd right" ng-click="">UPDATE FILE(s)</button>
+        <div class="lg-spacer"></div>
+        <div class="lg-spacer"></div>
+        <div class="lg-spacer"></div>
+    </div>
+</div>
+

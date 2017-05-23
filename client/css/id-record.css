@@ -1,0 +1,58 @@
+.profile_text{
+    color: #00284d;
+}
+
+.preview{
+    color: #00284d;
+}
+
+input[type=text]:disabled{
+    color: #00284d;
+}
+
+.angucomplete-dropdown {
+    overflow-y: auto;
+    max-height: 200px;    
+}
+
+.carousel{
+    height: 300px;
+}
+
+#id_pictures{
+    height: 500px;
+}
+
+#uploadNewPicture{
+    height: 200px;
+    width: 200px;
+    background-color: #00284d;
+    opacity: 0.4;    
+}
+
+#uploadNewPicture i{
+    padding-top: 60px;
+    padding-left: 60px;
+    color: #ffe699;
+    font-size: 75px;
+}
+
+#upload{
+    display:none;
+}
+
+.id_PicSettings{
+    height: 200px;
+    width: 200px;
+    background-color: #00284d;
+    opacity: 0.4;
+    position: absolute;  
+    display: none;
+}
+
+.id_PicSettings i{
+    padding-top: 60px;
+    padding-left: 60px;
+    color: #ffe699;
+    font-size: 75px;
+}

@@ -1,0 +1,261 @@
+/* Elements */
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+:focus{
+    outline: none;
+}
+
+.row{
+    margin: 0px;
+}
+
+.divider{
+    height: 1px;
+    background-color: #c5c5c5;
+    overflow: hidden;
+}
+
+.md-spacer {
+    height: 2rem;
+    width: 100%;
+}
+
+.sm-spacer {
+    height: 1rem;
+    width: 100%;
+}
+
+.lg-spacer {
+    height: 3rem;
+    width: 100%;
+}
+
+.secretary-button{
+    margin: 7px;
+    background-color: #00284d;
+    border-color: #00284d;
+    color : #ffe699;
+}
+
+.secretary-button:hover, .secretary-button:focus {
+    background-color: #003566;
+    border-color: #003566; 
+    color :#ffecb3;
+}
+
+.secretary-button-scnd{
+    margin: 7px;
+    background-color: #ffe699;
+    border-color:  #ffe699;
+    color : #00284d; 
+
+}
+
+.secretary-button-scnd:hover, .secretary-button-scnd:focus{
+
+    background-color: #ffecb3;
+    border-color:  #ffecb3;
+    color : #003566;
+}
+
+.secretary-button-thrd{
+    margin: 7px;
+    background-color: white;
+    border-color:  white;
+    color : #00284d;
+
+}
+
+.secretary-button-thrd:hover, .secretary-button-thrd:focus{
+
+    background-color: #00284d;
+    border-color:  #00284d;
+    color : white;
+}
+
+.secretary-button-frth{
+    margin: 7px;
+    background-color: white;
+    border-color:  white;
+    color : #00284d;
+
+}
+
+.secretary-button-frth:hover, .secretary-button-frth:focus{
+    background-color: #003566;
+    border-color:  #003566;
+    color : white;
+}
+
+.secretary-button--ffth{
+    margin: 7px;
+    background-color: #00284d;
+    border-color: #00284d;
+    color : #ffe699;
+
+}
+
+.secretary-button-ffth:hover, .secretary-button-ffth:focus{
+    background-color: #ffe699;
+    border-color:  #ffe699;
+    color : #00284d; 
+}
+
+.google-button{
+    margin: 1%;
+    background-color: #d14836;
+    border-color: #d14836;
+    color : white;
+
+}
+
+.google-button:hover, .google-button:focus{
+    background-color: #c53727;
+    border-color: #b0281a;
+}
+
+.facebook-button{
+    margin: 1%;
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color : white;
+
+}
+
+.facebook-button:hover, .facebook-button:focus{
+    background-color: #2c4372;
+    border-color: #2c4372;
+}
+
+.windows-button{
+    margin: 1%;
+    background-color: #0072c6;
+    border-color: #0072c6;
+    color : white;
+
+}
+
+.windows-button:hover, .windows-button:focus {
+    background-color: #005999;
+    border-color: #005999;
+}
+
+.fa-2x{
+    font-size: 28px;
+}
+
+/* when hiding the popup */
+.secretary-popup.ng-hide-add         { animation:0.5s flipOutX ease; }
+
+/* when showing the popup */
+.secretary-popup.ng-hide-remove      { animation:0.5s flipInX ease; }
+
+
+.waves-effect.waves-blue .waves-ripple {
+    background-color:  #003566;
+}
+
+.waves-effect.waves-beige .waves-ripple {
+    background-color:  #ffecb3;
+}
+/* Navigation bar*/
+nav{
+    margin:0px;
+    background-color: white; 
+}
+
+nav .brand-logo  {
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 992px){
+    nav .brand-logo {
+        margin-left: 0px;
+    }
+}
+
+.secretary-nav-element {
+    color: #00284d;
+
+    font-size: 20px;
+}
+
+.secretary-nav-element:hover{
+    color: #ffe699; 
+    background-color: #00284d;
+    font-size: 22px;
+}
+
+.panel{  
+    background-image: url("../images/main_panel_background.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    border-radius: 0;
+    border-width: 0;
+    margin-bottom: 0%;
+    display: block;
+}
+
+.card{
+    margin-bottom: 0;
+    color: #00284d;
+}
+
+.card-title{
+    margin: 5%;
+}
+
+.card-content{
+    text-align: center;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating),
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover{
+    color: #039be5;
+    text-transform: none;
+}
+
+.card-content > .row > .btn{
+    margin-left : 4%;
+    margin-right: 4%;
+    margin-top: 0%;
+}
+
+.card-action .btn{
+    margin-left: 4%;
+}
+
+.card-action .row{
+    margin-bottom: 0px;
+}
+
+.error-message{
+    color: #F44336;
+}
+
+.picker__date-display {
+    background-color: #003566;
+}
+
+.picker__weekday-display{
+    background-color: #00284d;
+}
+
+.picker__month-display , .picker__day-display, .picker__day.picker__day--today{
+    color :#ffe699; 
+} 
+
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected{
+    background-color: #003566;
+    color: #ffe699;
+}
+
+.picker__close, .picker__today{
+    color: #003566;
+}

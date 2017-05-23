@@ -1,0 +1,207 @@
+
+<div class="navbar">
+    <nav> 
+        <div class="nav-wrapper"> 
+            <a href="/"><img class="brand-logo" src="images/logo-primary.png"></a> 
+            <ul class="right"> 
+                <li><a class="secretary-nav-element nav-element">About</a></li> 
+                <li><a class="btn nav-element secretary-button" href="/login">Login</a></li> 
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="panel"  role="main">
+    <div class="container panel-text">
+        <div class="md-spacer"></div>
+        <div class="md-spacer"></div>
+        <div class="md-spacer"></div>
+        <div class="md-spacer"></div>
+        <div class="md-spacer"></div>
+        <h1>Get to clean up your desk, retrieve documents easily and organize your life by using <b>Secretary.</b>  </h1> 
+        <div class="row">
+            <button class="btn btn-large secretary-button-scnd" ng-click="scrollTo('#getstarted-container')">get started >></button>
+            <button class="btn btn-large secretary-button-thrd">learn more</button>
+        </div>
+        <div class="md-spacer"></div>
+
+    </div>
+</div>
+<div class="md-spacer"></div>
+<div id="signup-container" class="container signup">
+
+    <div class="section">
+        <p>Before you start the Secretary experience, <b>SIGN UP</b> with one of two presented solutions</p>
+    </div>
+
+    <div class="section signup-form">
+        <div class="row">
+            <div class="col m5 extern-account-panel">
+                <p>Select an account to login and create your storage space.</p>
+                <br/>
+
+                <div class="row">
+                    <button class="btn btn-large facebook-button"><i class="fa fa-facebook fa-4x left"></i>facebook</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-large google-button"><i class="fa fa-google-plus fa-4x left"></i>google+</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-large windows-button"><i class="fa fa-windows  fa-4x left"></i>windows</button>
+                </div>
+
+                <br/>
+                <h6>Already have a Secretary account ? <a href="/login">Sign in here</a></h6>
+            </div>
+            <div class="col m2">
+                <div class="lg-spacer"></div>
+                <div class="lg-spacer"></div>
+                <div class="lg-spacer"></div>
+
+                <p>OR</p>
+            </div>
+            <div class="col m5 create-account-panel">
+
+                <p>Create an account and a new storage space.</p>
+                <br/>
+                <form id="signup_form">
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Enter first name"
+                                   id="firstname_input"
+                                   ng-model="firstname_input"
+                                   type="text" 
+                                   class="validate">
+                            <label class="active" for="firstname_input">First Name</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="firstname_error">
+                        <div class="offset-m4 error-message">First name is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Enter last name" 
+                                   id="lastname_input" 
+                                   ng-model="lastname_input" 
+                                   type="text" 
+                                   class="validate">
+                            <label class="active" for="lastname_input">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="lastname_error">
+                        <div class="offset-m4 error-message">Last name is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Enter username" class="validate" 
+                                   id="username_input" 
+                                   type="text" 
+                                   ng-model="username_input" 
+                                   ng-change="checkUsername()" 
+                                   ng-model-options="{debounce: 750}">
+                            <label class="active" for="username_input">User Name</label>
+                        </div> 
+                    </div>
+                    <div class="row" ng-show="username_exists_error">
+                        <div class="offset-m4 error-message">User name already exists.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row" ng-show="username_empty_error">
+                        <div class="offset-m4 error-message">User name is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Enter e-mail" 
+                                   id="email_input" 
+                                   type="email" 
+                                   class="validate" 
+                                   ng-model="email_input"
+                                   ng-change="checkEmail()">
+                            <label class="active" for="email_input">E-mail</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="email_used_error">
+                        <div class="offset-m5 error-message">E-mail already used.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row" ng-show="email_empty_error">
+                        <div class="offset-m5 error-message">E-mail is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Choose password" 
+                                   id="password_input"
+                                   type="password"
+                                   class="validate" 
+                                   ng-model="password_input"
+                                   ng-change="storePassword()"
+                                   ng-model-options="{debounce: 750}">
+                            <label class="active" for="password_input">Password</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="password_empty_error">
+                        <div class="offset-m5 error-message">Password is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m10 offset-m1">
+                            <input 
+                                   placeholder="Confirm password"
+                                   id="confirm_password_input" 
+                                   type="password"
+                                   class="validate" 
+                                   ng-model="confirm_password_input"
+                                   ng-change="checkPassword()"
+                                   ng-model-options="{debounce: 750}">
+                            <label class="active" for="confirm_password_input">Confirm password</label>
+                        </div>
+                    </div>
+                    <div class="row" ng-show="password_notidentical_error">
+                        <div class="offset-m4 error-message">Passwords are not identical.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="row" ng-show="confirm_password_empty_error">
+                        <div class="offset-m5 error-message">Password confirmation is required.</div>
+                        <div class="sm-spacer"></div>
+                    </div>
+                    <div class="md-spacer"></div>
+                    <button class="btn btn-large secretary-button" ng-click="createAccount()">create account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="md-spacer"></div>
+    <div class="divider"></div>
+</div>
+<div class="md-spacer"></div>
+<div id="getstarted-container" class="container getstarted">
+    <h2>Getting Started with Secretary</h2>
+
+    <div class="section steps">
+        <p>1. <b>Create</b> an account or <b>build</b> one using your Google or Facebook account.</p>
+        <p>2. <b>Login</b> and <b>create</b> your storage space.</p>
+        <p>3. <b>Start</b> uploading your files !</p>
+    </div>
+
+    <div class="section caption">
+        <p><b>Store</b> your files on the cloud.</p>
+        <p><b>Build</b> and <b>print</b> case files easily.</p>
+        <p><b>Keep</b> fresh documents by adding an expiration date.</p>
+        <p><b>Download</b> customized archives.</p>
+    </div>
+    <div id="test"></div>
+    <button class="btn btn-large secretary-button" ng-click="scrollTo('#signup-container')">get started now >></button>
+</div>
+<div class="md-spacer"></div>
+<div class="md-spacer"></div>
+<div class="md-spacer"></div>
+
+
